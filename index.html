@@ -61,8 +61,8 @@
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" onclick="closeMobile()">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <button class="mobile-close" onclick="closeMobile()" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <div class="mobile-links">
       <a href="#services" class="mobile-link" onclick="closeMobile()">Services</a>
@@ -175,7 +175,7 @@
 
         <div class="services-grid">
 
-          <div class="service-card scroll-reveal" style="transition-delay:0s" onclick="openModal('content')">
+          <div class="service-card scroll-reveal" style="transition-delay:0s" onclick="openModal('content')" role="button" tabindex="0" aria-label="Content Creation — learn more" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('content')}">
             <div class="svc-hover-bg svc-hover-mint"></div>
             <div class="svc-corner"></div>
             <div class="svc-icon svc-icon-mint">
@@ -188,7 +188,7 @@
             <div class="svc-line svc-line-mint"></div>
           </div>
 
-          <div class="service-card scroll-reveal" style="transition-delay:.15s" onclick="openModal('ugc')">
+          <div class="service-card scroll-reveal" style="transition-delay:.15s" onclick="openModal('ugc')" role="button" tabindex="0" aria-label="UGC — learn more" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('ugc')}">
             <div class="svc-hover-bg svc-hover-cyan"></div>
             <div class="svc-corner"></div>
             <div class="svc-icon svc-icon-cyan">
@@ -201,7 +201,7 @@
             <div class="svc-line svc-line-cyan"></div>
           </div>
 
-          <div class="service-card scroll-reveal" style="transition-delay:.3s" onclick="openModal('media')">
+          <div class="service-card scroll-reveal" style="transition-delay:.3s" onclick="openModal('media')" role="button" tabindex="0" aria-label="Media Buying — learn more" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('media')}">
             <div class="svc-hover-bg svc-hover-rose"></div>
             <div class="svc-corner"></div>
             <div class="svc-icon svc-icon-rose">
@@ -484,11 +484,11 @@
               <a href="#contact-form" class="footer-link">Contact</a>
             </div>
             <div class="footer-socials">
-              <a href="https://instagram.com/thereelrecipe" target="_blank" rel="noopener noreferrer" class="social-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              <a href="https://instagram.com/thereelrecipe" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="The Reel Recipe on Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
               </a>
-              <a href="https://tiktok.com/@thereelrecipe" target="_blank" rel="noopener noreferrer" class="social-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.42a8.16 8.16 0 004.76 1.52V7.49a4.81 4.81 0 01-1-.8z"/></svg>
+              <a href="https://tiktok.com/@thereelrecipe" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="The Reel Recipe on TikTok">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.42a8.16 8.16 0 004.76 1.52V7.49a4.81 4.81 0 01-1-.8z"/></svg>
               </a>
             </div>
           </div>
@@ -504,8 +504,8 @@
   <!-- ===== SERVICE MODAL ===== -->
   <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
     <div class="modal-box" id="modalBox" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal()">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
       <div id="modalContent"></div>
     </div>
