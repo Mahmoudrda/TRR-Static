@@ -10,6 +10,43 @@
   font-display: swap;
 }
 
+/* ── Arabic font overrides ── */
+[lang="ar"] body {
+  font-family: 'Cairo', sans-serif;
+  letter-spacing: 0;
+}
+[lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3, [lang="ar"] h4,
+[lang="ar"] .headline-word, [lang="ar"] .headline-viral,
+[lang="ar"] .svc-title, [lang="ar"] .about-title,
+[lang="ar"] .cta-title, [lang="ar"] .section-title,
+[lang="ar"] .sub-title, [lang="ar"] .result-val,
+[lang="ar"] .ct-title, [lang="ar"] .modal-title,
+[lang="ar"] .modal-includes-title, [lang="ar"] .mobile-link {
+  font-family: 'VIP Hala', sans-serif;
+}
+
+/* ── RTL layout fixes ── */
+[dir="rtl"] .about-bar {
+  transform-origin: right;
+  background: linear-gradient(270deg, var(--mint), var(--purple), transparent);
+}
+[dir="rtl"] .svc-line { transform-origin: right; }
+[dir="rtl"] .ct-line  { transform-origin: right; }
+[dir="rtl"] .svc-line-mint { background: linear-gradient(270deg, rgba(103,193,159,0.4), transparent); }
+[dir="rtl"] .svc-line-cyan { background: linear-gradient(270deg, rgba(34,211,238,0.4), transparent); }
+[dir="rtl"] .svc-line-rose { background: linear-gradient(270deg, rgba(251,113,133,0.4), transparent); }
+[dir="rtl"] .ct-line-purple { background: linear-gradient(270deg, var(--purple), var(--purple-light)); }
+[dir="rtl"] .ct-line-mint   { background: linear-gradient(270deg, var(--mint), var(--mint-light)); }
+[dir="rtl"] .ct-line-rose   { background: linear-gradient(270deg, #f43f5e, #fb923c); }
+[dir="rtl"] .ct-line-cyan   { background: linear-gradient(270deg, #22d3ee, #60a5fa); }
+[dir="rtl"] .section-top-line {
+  background: linear-gradient(270deg, transparent, rgba(103,193,159,0.3), transparent);
+}
+@media(min-width:640px) {
+  [dir="rtl"] .footer-brand { align-items: flex-end; }
+  [dir="rtl"] .footer-right { align-items: flex-start; }
+}
+
 /* ── Variables ── */
 :root {
   --navy:         #161241;
@@ -247,16 +284,15 @@ img { display: block; max-width: 100%; }
   box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.1), 0 12px 40px rgba(0,0,0,0.08);
 }
 
-.nb-content { position: relative; padding: 0 1rem 0 1.5rem; }
-@media(min-width:640px){ .nb-content { padding: 0 1.5rem; } }
-
-.nb-content > :first-child {
+.nb-content {
+  position: relative;
   display: flex;
-  height: 3rem;
   align-items: center;
   justify-content: space-between;
+  height: 3rem;
+  padding: 0 1rem 0 1.5rem;
 }
-@media(min-width:640px){ .nb-content > :first-child { height: 3.5rem; } }
+@media(min-width:640px){ .nb-content { padding: 0 1.5rem; height: 3.5rem; } }
 
 .nb-logo {
   display: flex; align-items: center; gap: 0.5rem;
@@ -320,10 +356,47 @@ img { display: block; max-width: 100%; }
   background: none; border: none; cursor: pointer;
   color: var(--white);
   padding: 0.5rem;
-  margin-right: -0.5rem;
   position: relative; z-index: 10;
 }
 @media(min-width:768px){ .nb-menu-btn { display: none; } }
+
+/* Groups lang switcher + hamburger on mobile */
+.nb-right-mobile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: -0.5rem;
+}
+@media(min-width:768px){ .nb-right-mobile { display: none; } }
+
+/* Language switcher */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: rgba(255,255,255,0.06);
+  border: 0.5px solid rgba(255,255,255,0.1);
+  border-radius: 9999px;
+  padding: 3px;
+}
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gray-400);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  transition: color 0.2s, background 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+.lang-btn.active {
+  background: rgba(255,255,255,0.14);
+  color: var(--white);
+}
+.lang-btn:hover:not(.active) { color: var(--white); }
 
 /* Mobile menu */
 .mobile-menu {
@@ -1165,13 +1238,13 @@ img { display: block; max-width: 100%; }
 }
 @media(min-width:640px){ .cta-emblem-img { height: 5rem; } }
 
-.cta-arabic {
+.cta-question {
   font-size: 0.875rem;
   color: rgba(103,193,159,0.6);
-  font-family: 'VIP Hala', sans-serif;
   margin-bottom: 0.75rem;
 }
-@media(min-width:640px){ .cta-arabic { font-size: 1rem; } }
+[lang="ar"] .cta-question { font-family: 'VIP Hala', sans-serif; }
+@media(min-width:640px){ .cta-question { font-size: 1rem; } }
 .cta-title {
   font-family: 'Anton', sans-serif;
   font-size: 1.875rem;

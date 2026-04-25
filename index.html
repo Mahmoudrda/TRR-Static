@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Reel Recipe | وكالة المحتوى الفيروسي</title>
-  <meta name="description" content="Leading the market with viral content, performance marketing, and full-service digital solutions that drive real results. نصنع محتوى يصنع الفرق">
+  <title>The Reel Recipe | Viral Content Agency</title>
+  <meta name="description" content="Leading the market with viral content, performance marketing, and full-service digital solutions that drive real results.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -44,17 +44,27 @@
         </a>
 
         <div class="nb-links">
-          <a href="#services" class="nb-link">Services</a>
-          <a href="#about" class="nb-link">About</a>
-          <a href="#stats" class="nb-link">Results</a>
-          <a href="#contact" class="nb-link">Contact</a>
-          <a href="#contact-form" class="nb-cta">Get Started</a>
+          <a href="#services" class="nb-link" data-i18n="navServices">Services</a>
+          <a href="#about" class="nb-link" data-i18n="navAbout">About</a>
+          <a href="#stats" class="nb-link" data-i18n="navResults">Results</a>
+          <a href="#contact" class="nb-link" data-i18n="navContact">Contact</a>
+          <div class="lang-switcher" id="langSwitcherDesktop">
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="ar">AR</button>
+          </div>
+          <a href="#contact-form" class="nb-cta" data-i18n="navCta">Get Started</a>
         </div>
 
-        <button class="nb-menu-btn" id="menuBtn" aria-label="Toggle menu">
-          <svg id="iconMenu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-          <svg id="iconX" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
+        <div class="nb-right-mobile">
+          <div class="lang-switcher" id="langSwitcherMobileNav">
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="ar">AR</button>
+          </div>
+          <button class="nb-menu-btn" id="menuBtn" aria-label="Toggle menu">
+            <svg id="iconMenu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg id="iconX" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
       </div>
     </nav>
   </div>
@@ -65,11 +75,11 @@
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <div class="mobile-links">
-      <a href="#services" class="mobile-link" onclick="closeMobile()">Services</a>
-      <a href="#about" class="mobile-link" onclick="closeMobile()">About</a>
-      <a href="#stats" class="mobile-link" onclick="closeMobile()">Results</a>
-      <a href="#contact" class="mobile-link" onclick="closeMobile()">Contact</a>
-      <a href="#contact-form" class="mobile-cta" onclick="closeMobile()">Get Started</a>
+      <a href="#services" class="mobile-link" onclick="closeMobile()" data-i18n="navServices">Services</a>
+      <a href="#about" class="mobile-link" onclick="closeMobile()" data-i18n="navAbout">About</a>
+      <a href="#stats" class="mobile-link" onclick="closeMobile()" data-i18n="navResults">Results</a>
+      <a href="#contact" class="mobile-link" onclick="closeMobile()" data-i18n="navContact">Contact</a>
+      <a href="#contact-form" class="mobile-cta" onclick="closeMobile()" data-i18n="navCta">Get Started</a>
     </div>
   </div>
 
@@ -92,7 +102,7 @@
         <!-- Badge -->
         <div class="hero-badge fade-up" style="animation-delay:.2s">
           <span class="badge-star spin-slow">✦</span>
-          Leading the viral content market
+          <span data-i18n="heroBadge">Leading the viral content market</span>
         </div>
 
         <!-- Emblem -->
@@ -107,21 +117,18 @@
         <!-- Headline -->
         <div class="hero-headline">
           <div class="headline-row">
-            <span class="headline-word word-up" style="animation-delay:.4s">We</span>
-            <span class="headline-word word-up" style="animation-delay:.48s">make</span>
-            <span class="headline-word word-up" style="animation-delay:.56s">brands</span>
+            <span class="headline-word word-up" style="animation-delay:.4s" data-i18n="heroWord1">We</span>
+            <span class="headline-word word-up" style="animation-delay:.48s" data-i18n="heroWord2">make</span>
+            <span class="headline-word word-up" style="animation-delay:.56s" data-i18n="heroWord3">brands</span>
           </div>
-          <div class="headline-viral word-up" style="animation-delay:.8s">go viral.</div>
+          <div class="headline-viral word-up" style="animation-delay:.8s" data-i18n="heroViral">go viral.</div>
         </div>
 
         <!-- Subtitle -->
-        <p class="hero-sub fade-in" style="animation-delay:1.2s">
+        <p class="hero-sub fade-in" style="animation-delay:1.2s" data-i18n="heroSub">
           Full-service content agency specializing in viral strategies, performance marketing,
           and end-to-end digital solutions that drive real results.
         </p>
-
-        <!-- Arabic -->
-        <p class="hero-arabic fade-in" dir="rtl" style="animation-delay:1.4s">نصنع محتوى يصنع الفرق</p>
 
         <!-- Follower count -->
         <div class="follower-block fade-up" style="animation-delay:1.5s">
@@ -144,7 +151,7 @@
           </div>
           <div class="follower-total-row">
             <span class="follower-total-num" data-count="456000">0</span>
-            <span class="follower-total-label">Total Followers</span>
+            <span class="follower-total-label" data-i18n="followerTotal">Total Followers</span>
           </div>
         </div>
 
@@ -152,12 +159,12 @@
         <div class="hero-ctas fade-up" style="animation-delay:1.4s">
           <a href="https://airtable.com/app9vu99FNclhXxIV/pagEYrGXpEo0ZyMzz/form" target="_blank" rel="noopener noreferrer" class="btn-primary">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="m12 15-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
-            Become Our Client
+            <span data-i18n="heroCta1">Become Our Client</span>
             <svg class="arrow-bounce" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
           <a href="https://airtable.com/appU9qIR5pV4srObg/pagEGxabyiTNG3NSt/form" target="_blank" rel="noopener noreferrer" class="btn-ghost">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-            Apply to Jobs
+            <span data-i18n="heroCta2">Apply to Jobs</span>
           </a>
         </div>
 
@@ -169,48 +176,51 @@
       <div class="section-top-line"></div>
       <div class="container">
         <div class="section-header scroll-reveal">
-          <div class="badge badge-purple">What We Do</div>
-          <h2 class="section-title">Everything you need<br>under one roof.</h2>
+          <div class="badge badge-purple" data-i18n="servicesBadge">What We Do</div>
+          <h2 class="section-title">
+            <span data-i18n="servicesTitleL1">Everything you need</span><br>
+            <span data-i18n="servicesTitleL2">under one roof.</span>
+          </h2>
         </div>
 
         <div class="services-grid">
 
-          <div class="service-card scroll-reveal" style="transition-delay:0s" onclick="openModal('content')" role="button" tabindex="0" aria-label="Content Creation — learn more" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('content')}">
+          <div class="service-card scroll-reveal" style="transition-delay:0s" onclick="openModal('content')" role="button" tabindex="0" aria-label="Content Creation" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('content')}">
             <div class="svc-hover-bg svc-hover-mint"></div>
             <div class="svc-corner"></div>
             <div class="svc-icon svc-icon-mint">
               <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect x="2" y="8" width="22" height="16" rx="3.5" fill="currentColor" fill-opacity="0.3"/><rect x="2" y="8" width="22" height="16" rx="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M24 12.5L31 8.5v15l-7-4v-7z" fill="currentColor"/><circle cx="7" cy="13" r="1.1" fill="currentColor"/></svg>
             </div>
-            <span class="svc-cat">Content</span>
-            <h3 class="svc-title">Content Creation</h3>
-            <p class="svc-desc">Scroll-stopping content that builds community and drives organic reach.</p>
-            <span class="svc-more svc-more-mint">Learn more <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            <span class="svc-cat" data-i18n="svcContentCat">Content</span>
+            <h3 class="svc-title" data-i18n="svcContentTitle">Content Creation</h3>
+            <p class="svc-desc" data-i18n="svcContentDesc">Scroll-stopping content that builds community and drives organic reach.</p>
+            <span class="svc-more svc-more-mint" data-i18n="svcMore">Learn more <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
             <div class="svc-line svc-line-mint"></div>
           </div>
 
-          <div class="service-card scroll-reveal" style="transition-delay:.15s" onclick="openModal('ugc')" role="button" tabindex="0" aria-label="UGC — learn more" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('ugc')}">
+          <div class="service-card scroll-reveal" style="transition-delay:.15s" onclick="openModal('ugc')" role="button" tabindex="0" aria-label="UGC" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('ugc')}">
             <div class="svc-hover-bg svc-hover-cyan"></div>
             <div class="svc-corner"></div>
             <div class="svc-icon svc-icon-cyan">
               <svg width="24" height="24" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 5.3c-3.1.2-4.5 2.6-4.1 5.1.4 2.4 1.9 3.6 4.4 3.6 2.4 0 4.3-1.1 4.3-3.7 0-2.8-1.6-5.2-4.6-5z"/><path d="M3.2 25.5c.3-4.6 3.2-8 9-8.2 5.7-.2 8.6 3 9.1 8"/><path d="M22.8 8.5c-2 .3-2.8 1.9-2.5 3.4.3 1.5 1.4 2.3 2.9 2.3 1.5 0 2.8-.8 2.7-2.5-.1-1.9-1-3.4-3.1-3.2z"/><path d="M20 22.3c.4-3.2 1.9-5.5 4.6-5.6 2.7-.1 4.2 1.9 4.6 5.3"/></svg>
             </div>
-            <span class="svc-cat">Content</span>
-            <h3 class="svc-title">UGC</h3>
-            <p class="svc-desc">Authentic user-generated content from real creators that drives trust and conversion.</p>
-            <span class="svc-more svc-more-cyan">Learn more <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            <span class="svc-cat" data-i18n="svcUgcCat">Content</span>
+            <h3 class="svc-title" data-i18n="svcUgcTitle">UGC</h3>
+            <p class="svc-desc" data-i18n="svcUgcDesc">Authentic user-generated content from real creators that drives trust and conversion.</p>
+            <span class="svc-more svc-more-cyan" data-i18n="svcMore">Learn more <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
             <div class="svc-line svc-line-cyan"></div>
           </div>
 
-          <div class="service-card scroll-reveal" style="transition-delay:.3s" onclick="openModal('media')" role="button" tabindex="0" aria-label="Media Buying — learn more" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('media')}">
+          <div class="service-card scroll-reveal" style="transition-delay:.3s" onclick="openModal('media')" role="button" tabindex="0" aria-label="Media Buying" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('media')}">
             <div class="svc-hover-bg svc-hover-rose"></div>
             <div class="svc-corner"></div>
             <div class="svc-icon svc-icon-rose">
               <svg width="24" height="24" viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="16" r="13.5" opacity="0.22"/><circle cx="16" cy="16" r="9" opacity="0.45"/><circle cx="16" cy="16" r="4.5"/><path d="M27 5l-3.2 3.2-1.5-1.5L27 5z"/><path d="M16 16l8.2-8.2" stroke="currentColor" stroke-width="1.8"/></svg>
             </div>
-            <span class="svc-cat">Marketing</span>
-            <h3 class="svc-title">Media Buying</h3>
-            <p class="svc-desc">Strategic ad placement across platforms for maximum impact.</p>
-            <span class="svc-more svc-more-rose">Learn more <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            <span class="svc-cat" data-i18n="svcMediaCat">Marketing</span>
+            <h3 class="svc-title" data-i18n="svcMediaTitle">Media Buying</h3>
+            <p class="svc-desc" data-i18n="svcMediaDesc">Strategic ad placement across platforms for maximum impact.</p>
+            <span class="svc-more svc-more-rose" data-i18n="svcMore">Learn more <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
             <div class="svc-line svc-line-rose"></div>
           </div>
 
@@ -225,40 +235,42 @@
 
       <div class="container">
         <div class="section-header scroll-reveal">
-          <div class="badge badge-mint">Our Work</div>
-          <h2 class="section-title">Content that<br>breaks the algorithm.</h2>
-          <p class="section-sub">From storytelling that moves people to skits that go viral — we've cracked the code on what makes content spread.</p>
-          <p class="section-arabic" dir="rtl">محتوى يكسر الخوارزميات</p>
+          <div class="badge badge-mint" data-i18n="portfolioBadge">Our Work</div>
+          <h2 class="section-title">
+            <span data-i18n="portfolioTitleL1">Content that</span><br>
+            <span data-i18n="portfolioTitleL2">breaks the algorithm.</span>
+          </h2>
+          <p class="section-sub" data-i18n="portfolioSub">From storytelling that moves people to skits that go viral — we've cracked the code on what makes content spread.</p>
         </div>
 
         <!-- Mini stats -->
         <div class="results-grid">
           <div class="result-card scroll-reveal glass-strong" style="transition-delay:0s">
             <div class="result-val">80+</div>
-            <p class="result-label">Clients Served</p>
-            <p class="result-sub">in just 15 months</p>
+            <p class="result-label" data-i18n="stat80Label">Clients Served</p>
+            <p class="result-sub" data-i18n="stat80Sub">in just 15 months</p>
           </div>
           <div class="result-card scroll-reveal glass-strong" style="transition-delay:.1s">
             <div class="result-val">50M+</div>
-            <p class="result-label">Total Reach</p>
-            <p class="result-sub">across platforms</p>
+            <p class="result-label" data-i18n="stat50Label">Total Reach</p>
+            <p class="result-sub" data-i18n="stat50Sub">across platforms</p>
           </div>
           <div class="result-card scroll-reveal glass-strong" style="transition-delay:.2s">
             <div class="result-val">3x</div>
-            <p class="result-label">Avg. Engagement</p>
-            <p class="result-sub">vs industry standard</p>
+            <p class="result-label" data-i18n="stat3Label">Avg. Engagement</p>
+            <p class="result-sub" data-i18n="stat3Sub">vs industry standard</p>
           </div>
           <div class="result-card scroll-reveal glass-strong" style="transition-delay:.3s">
             <div class="result-val">15+</div>
-            <p class="result-label">Industries</p>
-            <p class="result-sub">covered</p>
+            <p class="result-label" data-i18n="stat15Label">Industries</p>
+            <p class="result-sub" data-i18n="stat15Sub">covered</p>
           </div>
         </div>
 
         <!-- Real Results -->
         <div class="sub-header scroll-reveal">
-          <h3 class="sub-title">Real Results</h3>
-          <p class="sub-desc">Before & after — what happens when brands work with us.</p>
+          <h3 class="sub-title" data-i18n="realResultsTitle">Real Results</h3>
+          <p class="sub-desc" data-i18n="realResultsSub">Before & after — what happens when brands work with us.</p>
         </div>
 
         <div class="case-grid">
@@ -266,11 +278,11 @@
             <div class="case-img-wrap"><picture><source srcset="./portfolio/results-1.avif" type="image/avif"><img src="./portfolio/results-1.png" alt="PARIS results" class="case-img"></picture></div>
             <div class="case-info">
               <h4 class="case-client">PARIS</h4>
-              <p class="case-cat">Clothing Brand</p>
+              <p class="case-cat" data-i18n="parisCat">Clothing Brand</p>
               <div class="case-ba">
-                <div class="ba-before"><span class="ba-lbl">Before</span><span class="ba-val">1 post, 113 followers</span></div>
+                <div class="ba-before"><span class="ba-lbl" data-i18n="beforeLabel">Before</span><span class="ba-val">1 post, 113 followers</span></div>
                 <span class="ba-arrow">→</span>
-                <div class="ba-after"><span class="ba-lbl mint">After</span><span class="ba-val mint">28 posts, 62.8K followers</span></div>
+                <div class="ba-after"><span class="ba-lbl mint" data-i18n="afterLabel">After</span><span class="ba-val mint">28 posts, 62.8K followers</span></div>
               </div>
             </div>
           </div>
@@ -278,11 +290,11 @@
             <div class="case-img-wrap"><picture><source srcset="./portfolio/results-2.avif" type="image/avif"><img src="./portfolio/results-2.png" alt="DTX results" class="case-img"></picture></div>
             <div class="case-info">
               <h4 class="case-client">DTX</h4>
-              <p class="case-cat">Digital Printing</p>
+              <p class="case-cat" data-i18n="dtxCat">Digital Printing</p>
               <div class="case-ba">
-                <div class="ba-before"><span class="ba-lbl">Before</span><span class="ba-val">97 posts, 2,250 followers</span></div>
+                <div class="ba-before"><span class="ba-lbl" data-i18n="beforeLabel">Before</span><span class="ba-val">97 posts, 2,250 followers</span></div>
                 <span class="ba-arrow">→</span>
-                <div class="ba-after"><span class="ba-lbl mint">After</span><span class="ba-val mint">123 posts, 44.3K followers</span></div>
+                <div class="ba-after"><span class="ba-lbl mint" data-i18n="afterLabel">After</span><span class="ba-val mint">123 posts, 44.3K followers</span></div>
               </div>
             </div>
           </div>
@@ -290,11 +302,11 @@
             <div class="case-img-wrap"><picture><source srcset="./portfolio/results-3.avif" type="image/avif"><img src="./portfolio/results-3.png" alt="TAPIOCA results" class="case-img"></picture></div>
             <div class="case-info">
               <h4 class="case-client">TAPIOCA</h4>
-              <p class="case-cat">Bubble Tea</p>
+              <p class="case-cat" data-i18n="tapiocaCat">Bubble Tea</p>
               <div class="case-ba">
-                <div class="ba-before"><span class="ba-lbl">Before</span><span class="ba-val">0 posts, 9,564 followers</span></div>
+                <div class="ba-before"><span class="ba-lbl" data-i18n="beforeLabel">Before</span><span class="ba-val">0 posts, 9,564 followers</span></div>
                 <span class="ba-arrow">→</span>
-                <div class="ba-after"><span class="ba-lbl mint">After</span><span class="ba-val mint">29 posts, 23.9K followers</span></div>
+                <div class="ba-after"><span class="ba-lbl mint" data-i18n="afterLabel">After</span><span class="ba-val mint">29 posts, 23.9K followers</span></div>
               </div>
             </div>
           </div>
@@ -302,43 +314,39 @@
 
         <!-- What We Create -->
         <div class="sub-header scroll-reveal" style="margin-top:5rem">
-          <h3 class="sub-title">What We Create</h3>
+          <h3 class="sub-title" data-i18n="whatWeCreate">What We Create</h3>
         </div>
 
         <div class="ct-grid">
           <div class="ct-card scroll-reveal glass-strong shimmer" style="transition-delay:0s">
             <div class="ct-icon ct-icon-purple"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></div>
-            <h4 class="ct-title">Storytelling</h4>
-            <span class="ct-ar text-purple-light" dir="rtl">قصص</span>
-            <p class="ct-desc">One of the secret ingredients that made The Reel Recipe possible. Deep emotional connection through authentic narratives.</p>
+            <h4 class="ct-title" data-i18n="ct1Title">Storytelling</h4>
+            <p class="ct-desc" data-i18n="ct1Desc">One of the secret ingredients that made The Reel Recipe possible. Deep emotional connection through authentic narratives.</p>
             <div class="ct-line ct-line-purple"></div>
           </div>
           <div class="ct-card scroll-reveal glass-strong shimmer" style="transition-delay:.12s">
             <div class="ct-icon ct-icon-mint"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>
-            <h4 class="ct-title">Skits</h4>
-            <span class="ct-ar text-mint" dir="rtl">سكتشات</span>
-            <p class="ct-desc">A bit of acting to convey a hidden message with the fun factor we've mastered. Entertainment meets strategy.</p>
+            <h4 class="ct-title" data-i18n="ct2Title">Skits</h4>
+            <p class="ct-desc" data-i18n="ct2Desc">A bit of acting to convey a hidden message with the fun factor we've mastered. Entertainment meets strategy.</p>
             <div class="ct-line ct-line-mint"></div>
           </div>
           <div class="ct-card scroll-reveal glass-strong shimmer" style="transition-delay:.24s">
             <div class="ct-icon ct-icon-rose"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <h4 class="ct-title">Voxpop</h4>
-            <span class="ct-ar text-rose" dir="rtl">مقابلات</span>
-            <p class="ct-desc">Street interviews reinvented. We changed the style and made it more youthful, raw, and shareable.</p>
+            <h4 class="ct-title" data-i18n="ct3Title">Voxpop</h4>
+            <p class="ct-desc" data-i18n="ct3Desc">Street interviews reinvented. We changed the style and made it more youthful, raw, and shareable.</p>
             <div class="ct-line ct-line-rose"></div>
           </div>
           <div class="ct-card scroll-reveal glass-strong shimmer" style="transition-delay:.36s">
             <div class="ct-icon ct-icon-cyan"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-            <h4 class="ct-title">UGC</h4>
-            <span class="ct-ar text-cyan" dir="rtl">محتوى المستخدم</span>
-            <p class="ct-desc">User generated content at its best — in the most authentic form. Real people, real results.</p>
+            <h4 class="ct-title" data-i18n="ct4Title">UGC</h4>
+            <p class="ct-desc" data-i18n="ct4Desc">User generated content at its best — in the most authentic form. Real people, real results.</p>
             <div class="ct-line ct-line-cyan"></div>
           </div>
         </div>
 
         <div class="port-cta scroll-reveal">
-          <a href="https://airtable.com/app9vu99FNclhXxIV/pagEYrGXpEo0ZyMzz/form" target="_blank" rel="noopener noreferrer" class="btn-primary">Get a Free Quote →</a>
-          <p class="port-cta-note">One click away</p>
+          <a href="https://airtable.com/app9vu99FNclhXxIV/pagEYrGXpEo0ZyMzz/form" target="_blank" rel="noopener noreferrer" class="btn-primary" data-i18n="portCta">Get a Free Quote →</a>
+          <p class="port-cta-note" data-i18n="portCtaNote">One click away</p>
         </div>
       </div>
     </section>
@@ -352,12 +360,11 @@
           <div class="about-left">
             <div class="about-bar"></div>
             <h2 class="about-title">
-              <span class="about-line">Built for brands that</span>
-              <span class="about-line">refuse to blend in.</span>
-              <span class="about-line about-arabic-line" dir="rtl">لا نقبل بالعادي</span>
+              <span class="about-line" data-i18n="aboutLine1">Built for brands that</span>
+              <span class="about-line" data-i18n="aboutLine2">refuse to blend in.</span>
             </h2>
           </div>
-          <p class="about-desc">
+          <p class="about-desc" data-i18n="aboutDesc">
             We combine creative instinct with data-driven strategy to build
             content ecosystems that don't just perform — they dominate.
           </p>
@@ -372,26 +379,26 @@
           <div class="stat-card scroll-reveal glass-strong" style="transition-delay:0s">
             <div class="stat-glow stat-glow-purple"></div>
             <div class="stat-val grad-purple" data-target="500" data-suffix="M+">0M+</div>
-            <p class="stat-label">Views Generated</p>
+            <p class="stat-label" data-i18n="statsViews">Views Generated</p>
           </div>
           <div class="stat-card scroll-reveal glass-strong" style="transition-delay:.15s">
             <div class="stat-glow stat-glow-mint"></div>
             <div class="stat-val grad-mint" data-target="200" data-suffix="+">0+</div>
-            <p class="stat-label">Brands Scaled</p>
+            <p class="stat-label" data-i18n="statsBrands">Brands Scaled</p>
           </div>
           <div class="stat-card scroll-reveal glass-strong" style="transition-delay:.3s">
             <div class="stat-glow stat-glow-orange"></div>
             <div class="stat-val grad-orange" data-target="10" data-suffix="x">0x</div>
-            <p class="stat-label">Average ROAS</p>
+            <p class="stat-label" data-i18n="statsRoas">Average ROAS</p>
           </div>
           <div class="stat-card scroll-reveal glass-strong" style="transition-delay:.45s">
             <div class="stat-glow stat-glow-cyan"></div>
             <div class="stat-val grad-cyan" data-target="24" data-suffix="/7">0/7</div>
-            <p class="stat-label">Always On</p>
+            <p class="stat-label" data-i18n="statsAlways">Always On</p>
           </div>
         </div>
         <div class="stats-note scroll-reveal">
-          <p>Ready to see these results for your brand? <a href="#contact-form" class="link-mint">Let's talk →</a></p>
+          <p><span data-i18n="statsNote">Ready to see these results for your brand?</span> <a href="#contact-form" class="link-mint" data-i18n="statsNoteCta">Let's talk →</a></p>
         </div>
       </div>
     </section>
@@ -414,19 +421,19 @@
                 <picture><source srcset="./logo-icon.avif" type="image/avif"><img src="./logo-icon.png" alt="" class="cta-emblem-img"></picture>
               </div>
             </div>
-            <p class="cta-arabic" dir="rtl">!هل أنت مستعد؟</p>
-            <h2 class="cta-title">Let's build something</h2>
-            <h2 class="cta-title"><span class="cta-unforgettable">unforgettable.</span></h2>
-            <p class="cta-desc">Whether you need viral content, a full rebrand, or a complete digital ecosystem — we're ready when you are.</p>
+            <p class="cta-question" data-i18n="ctaQuestion">Are you ready?</p>
+            <h2 class="cta-title" data-i18n="ctaTitle1">Let's build something</h2>
+            <h2 class="cta-title"><span class="cta-unforgettable" data-i18n="ctaTitle2">unforgettable.</span></h2>
+            <p class="cta-desc" data-i18n="ctaDesc">Whether you need viral content, a full rebrand, or a complete digital ecosystem — we're ready when you are.</p>
             <div class="cta-btns">
               <a href="#contact-form" class="btn-white">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                Get Your Free Quote
+                <span data-i18n="ctaBtn1">Get Your Free Quote</span>
                 <svg class="arrow-bounce" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a>
               <a href="https://airtable.com/appU9qIR5pV4srObg/pagEGxabyiTNG3NSt/form" target="_blank" rel="noopener noreferrer" class="btn-ghost">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                Join Our Team
+                <span data-i18n="ctaBtn2">Join Our Team</span>
               </a>
             </div>
           </div>
@@ -438,24 +445,23 @@
     <section id="contact-form" class="section contact-section">
       <div class="container-sm">
         <div class="contact-head scroll-reveal">
-          <h2 class="section-title">Get Started</h2>
-          <p class="section-sub">Choose how you want to work with us.</p>
-          <p class="section-arabic" dir="rtl">ابدأ معنا</p>
+          <h2 class="section-title" data-i18n="contactTitle">Get Started</h2>
+          <p class="section-sub" data-i18n="contactSub">Choose how you want to work with us.</p>
         </div>
         <div class="contact-links">
           <a href="https://airtable.com/app9vu99FNclhXxIV/pagEYrGXpEo0ZyMzz/form" target="_blank" rel="noopener noreferrer" class="btn-primary scroll-reveal" style="transition-delay:0s">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="m12 15-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/></svg>
-            Become Our Client
+            <span data-i18n="contactBtn1">Become Our Client</span>
             <svg class="arrow-bounce" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
           <a href="https://airtable.com/appU9qIR5pV4srObg/pagEGxabyiTNG3NSt/form" target="_blank" rel="noopener noreferrer" class="btn-primary scroll-reveal" style="transition-delay:.12s">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-            Apply to Jobs
+            <span data-i18n="contactBtn2">Apply to Jobs</span>
             <svg class="arrow-bounce" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
           <a href="https://airtable.com/appsmm2D6eL0BBwiS/pagh6fdLG8U0M9e8Z/form" target="_blank" rel="noopener noreferrer" class="btn-primary scroll-reveal" style="transition-delay:.24s">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2"/></svg>
-            Become a UGC Creator
+            <span data-i18n="contactBtn3">Become a UGC Creator</span>
             <svg class="arrow-bounce" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </div>
@@ -474,14 +480,13 @@
               </div>
               <picture><source srcset="./logo-wordmark.avif" type="image/avif"><img src="./logo-wordmark.png" alt="The Reel Recipe" class="footer-wordmark"></picture>
             </div>
-            <p class="footer-tag">Viral content. Real results.</p>
-            <p class="footer-tag-ar" dir="rtl">محتوى فيروسي. نتائج حقيقية</p>
+            <p class="footer-tag" data-i18n="footerTag">Viral content. Real results.</p>
           </div>
           <div class="footer-right">
             <div class="footer-nav">
-              <a href="#services" class="footer-link">Services</a>
-              <a href="#about" class="footer-link">About</a>
-              <a href="#contact-form" class="footer-link">Contact</a>
+              <a href="#services" class="footer-link" data-i18n="navServices">Services</a>
+              <a href="#about" class="footer-link" data-i18n="navAbout">About</a>
+              <a href="#contact-form" class="footer-link" data-i18n="navContact">Contact</a>
             </div>
             <div class="footer-socials">
               <a href="https://instagram.com/thereelrecipe" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="The Reel Recipe on Instagram">
@@ -494,7 +499,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p class="footer-copy">© <span id="year"></span> The Reel Recipe. All rights reserved.</p>
+          <p class="footer-copy" id="footerCopy"></p>
         </div>
       </div>
     </footer>
