@@ -1,13 +1,22 @@
-name             = "trr-follower-counts"
-main             = "follower-counts.js"
+name               = "trr-follower-counts"
+main               = "follower-counts.js"
 compatibility_date = "2024-09-23"
 
-# Plain (non-secret) variables — safe to commit
+# Plain variables — safe to commit
 [vars]
 INSTAGRAM_FALLBACK = "228000"
 TIKTOK_FALLBACK    = "228000"
 
-# ── Secrets — set these via the Cloudflare dashboard, NOT here ──
+# KV namespace for TikTok token storage
+# Replace YOUR_KV_NAMESPACE_ID after creating the namespace (Step 3 below)
+[[kv_namespaces]]
+binding = "TIKTOK_KV"
+id      = "YOUR_KV_NAMESPACE_ID"
+
+# Secrets — set via Cloudflare dashboard (Worker → Settings → Variables)
+# Never put actual values here.
 # INSTAGRAM_TOKEN
 # INSTAGRAM_USER_ID
-# TIKTOK_TOKEN  (optional, add when ready)
+# TIKTOK_CLIENT_KEY
+# TIKTOK_CLIENT_SECRET
+# TIKTOK_REFRESH_TOKEN
