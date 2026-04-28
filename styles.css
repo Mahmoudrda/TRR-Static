@@ -255,8 +255,8 @@ figure { margin: 0; }
 
 .nb-links { display: flex; align-items: center; gap: clamp(18px, 2.5vw, 36px); }
 
-.nb-link { font-size: 14px; font-weight: 500; color: var(--text-2); letter-spacing: 0.01em; transition: color 0.2s ease; }
-.nb-link:hover { color: var(--text); }
+.nb-link { font-size: 14px; font-weight: 600; color: var(--text); letter-spacing: 0.01em; transition: color 0.2s ease; }
+.nb-link:hover { color: var(--accent); }
 
 .nb-cta {
   display: inline-flex; align-items: center; gap: 8px;
