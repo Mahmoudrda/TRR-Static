@@ -1090,42 +1090,53 @@ figure { margin: 0; }
 
 /* ─────────────────────────────────────────
    RTL
+   NOTE: dir="rtl" on <html> already reverses flex-direction:row
+   (first child → right, last child → left). Never add
+   flex-direction:row-reverse as an RTL override — that double-reverses
+   back to LTR. Only use direction:rtl for grids, and handle margins /
+   transforms / positioning explicitly where needed.
 ───────────────────────────────────────── */
-[dir="rtl"] .nb-logo { flex-direction: row-reverse; }
-[dir="rtl"] .nb-links { flex-direction: row-reverse; }
-[dir="rtl"] .hero-proof { flex-direction: row-reverse; }
-[dir="rtl"] .hero-actions { flex-direction: row-reverse; }
+
+/* Mobile menu: hidden to the LEFT so it slides in from the left */
+[dir="rtl"] .mobile-menu { transform: translateX(-100%); }
+
+/* Service row grid: reverse column order via direction */
 [dir="rtl"] .svc-row { direction: rtl; }
-[dir="rtl"] .work-cap { flex-direction: row-reverse; }
-[dir="rtl"] .case-ba { flex-direction: row-reverse; }
+
+/* Results — before/after arrow: flip to point left (← toward After on left) */
 [dir="rtl"] .ba-arr { transform: scaleX(-1); }
+
+/* About: reverse two-column grid order */
 [dir="rtl"] .about-layout { direction: rtl; }
-[dir="rtl"] .cta-btns { flex-direction: row-reverse; }
-[dir="rtl"] .contact-btn { flex-direction: row-reverse; }
+
+/* Contact button arrow: push to far-left end, flip to point left */
 [dir="rtl"] .cbtn-arr { margin-left: 0; margin-right: auto; transform: scaleX(-1); }
 [dir="rtl"] .contact-btn:hover .cbtn-arr { transform: scaleX(-1) translateX(-3px); }
-[dir="rtl"] .footer-nav { flex-direction: row-reverse; }
-[dir="rtl"] .footer-bottom { flex-direction: row-reverse; }
-[dir="rtl"] .footer-top { flex-direction: row-reverse; }
-[dir="rtl"] .modal-header { flex-direction: row-reverse; }
-[dir="rtl"] .modal-header > div { text-align: right; }
-[dir="rtl"] .modal-include-item { flex-direction: row-reverse; }
-[dir="rtl"] .modal-video-link { flex-direction: row-reverse; }
-[dir="rtl"] .modal-video-arrow { margin-left: 0; margin-right: auto; transform: scaleX(-1); }
+
+/* Mini-stats: border separators on the LEFT (between cells in RTL column flow) */
+[dir="rtl"] .mstat { border-right: none; border-left: 1px solid var(--border); }
+[dir="rtl"] .mstat:last-child { border-left: none; }
+
+/* Stats note */
 [dir="rtl"] .stats-note { direction: rtl; }
 [dir="rtl"] .stats-note-link { margin-left: 0; margin-right: 6px; }
-[dir="rtl"] .mobile-links { direction: rtl; }
-[dir="rtl"] .modal-close { left: 16px; right: auto; }
-[dir="rtl"] .svc-panel-inner { direction: rtl; }
-[dir="rtl"] .svc-panel-include-item { flex-direction: row-reverse; }
-[dir="rtl"] .svc-panel-video { flex-direction: row-reverse; }
-[dir="rtl"] .svc-panel-video svg:last-child { margin-left: 0; margin-right: auto; transform: scaleX(-1); }
-[dir="rtl"] .hero-eyebrow { flex-direction: row-reverse; }
-[dir="rtl"] .hero-accent-line { align-self: flex-end; }
-[dir="rtl"] .cta-brand-mark { flex-direction: row-reverse; }
-[dir="rtl"] .mm-header { flex-direction: row-reverse; }
 
-/* Font size reduction for Arabic display text (Cairo is wider than Barlow Condensed) */
+/* Mobile menu links */
+[dir="rtl"] .mobile-links { direction: rtl; }
+
+/* Modal */
+[dir="rtl"] .modal-header > div { text-align: right; }
+[dir="rtl"] .modal-video-arrow { margin-left: 0; margin-right: auto; transform: scaleX(-1); }
+[dir="rtl"] .modal-close { left: 16px; right: auto; }
+
+/* Service accordion panels */
+[dir="rtl"] .svc-panel-inner { direction: rtl; }
+[dir="rtl"] .svc-panel-video svg:last-child { margin-left: 0; margin-right: auto; transform: scaleX(-1); }
+
+/* Hero accent line: align to reading-start = RIGHT in RTL */
+[dir="rtl"] .hero-accent-line { align-self: flex-start; }
+
+/* Font size reduction for Arabic display text (Cairo/VIP Hala wider than Barlow Condensed) */
 [dir="rtl"] .hl-xl { font-size: clamp(64px, 12vw, 155px); }
 [dir="rtl"] .hl-lg { font-size: clamp(50px, 9vw, 115px); }
 [dir="rtl"] .hl-sm { font-size: clamp(38px, 6vw, 78px); }
