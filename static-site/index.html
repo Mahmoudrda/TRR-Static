@@ -70,9 +70,15 @@
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <button type="button" class="mobile-close" onclick="closeMobile()" aria-label="Close menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
+    <div class="mm-header">
+      <picture>
+        <source srcset="./logo-icon.avif" type="image/avif">
+        <img src="./logo-icon.png" alt="" class="mm-logo-icon">
+      </picture>
+      <button type="button" class="mobile-close" onclick="closeMobile()" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
     <div class="mobile-links">
       <a href="#services" class="mobile-link" onclick="closeMobile()" data-i18n="navServices">Services</a>
       <a href="#work" class="mobile-link" onclick="closeMobile()" data-i18n="navResults">Results</a>
@@ -86,10 +92,10 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero">
+
       <div class="hero-inner">
 
         <div class="hero-eyebrow fade-up" style="animation-delay:.1s">
-          <span class="hero-brand-tag">The Reel Recipe</span>
           <span class="hero-eyebrow-dot" aria-hidden="true">✦</span>
           <span data-i18n="heroBadge">MENA content agency</span>
         </div>
@@ -440,6 +446,16 @@
     <section id="contact" class="cta-section">
       <div class="container">
         <div class="cta-inner scroll-reveal">
+          <div class="cta-brand-mark" aria-hidden="true">
+            <picture>
+              <source srcset="./logo-icon.avif" type="image/avif">
+              <img src="./logo-icon.png" alt="" class="cta-logo-icon">
+            </picture>
+            <picture>
+              <source srcset="./logo-wordmark.avif" type="image/avif">
+              <img src="./logo-wordmark.png" alt="" class="cta-logo-wm">
+            </picture>
+          </div>
           <p class="cta-eyebrow" data-i18n="ctaQuestion">Are you ready?</p>
           <h2 class="cta-hl">
             <span data-i18n="ctaTitle1">Let's build something</span><br>

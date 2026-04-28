@@ -248,10 +248,10 @@ figure { margin: 0; }
   display: flex; align-items: center; justify-content: space-between; gap: 32px;
 }
 
-.nb-logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; transition: opacity 0.2s ease; }
+.nb-logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; transition: opacity 0.2s ease; }
 .nb-logo:hover { opacity: 0.8; }
-.nb-logo-icon    { height: 30px; width: auto; }
-.nb-logo-wordmark{ height: 19px; width: auto; }
+.nb-logo-icon    { height: 44px; width: auto; }
+.nb-logo-wordmark{ height: 26px; width: auto; }
 
 .nb-links { display: flex; align-items: center; gap: clamp(18px, 2.5vw, 36px); }
 
@@ -284,9 +284,17 @@ figure { margin: 0; }
 }
 .mobile-menu.open { transform: none; }
 
+.mm-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.mm-logo-icon {
+  height: 44px; width: auto; display: block;
+}
+
 .mobile-close {
-  align-self: flex-end; color: var(--text-2); padding: 8px;
-  margin-bottom: 40px; display: flex;
+  color: var(--text-2); padding: 8px; display: flex;
 }
 
 .mobile-links { display: flex; flex-direction: column; gap: 2px; }
@@ -814,6 +822,20 @@ figure { margin: 0; }
 
 .cta-inner { max-width: 720px; }
 
+/* Logo lockup on teal CTA background */
+.cta-brand-mark {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 32px;
+}
+.cta-logo-icon {
+  height: 40px; width: auto; display: block; flex-shrink: 0;
+  mix-blend-mode: multiply; opacity: 0.55;
+}
+.cta-logo-wm {
+  height: 16px; width: auto; display: block;
+  mix-blend-mode: multiply; opacity: 0.45;
+}
+
 .cta-eyebrow {
   font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
   color: oklch(9% 0.065 278 / 0.6);
@@ -1100,6 +1122,8 @@ figure { margin: 0; }
 [dir="rtl"] .svc-panel-video svg:last-child { margin-left: 0; margin-right: auto; transform: scaleX(-1); }
 [dir="rtl"] .hero-eyebrow { flex-direction: row-reverse; }
 [dir="rtl"] .hero-accent-line { align-self: flex-end; }
+[dir="rtl"] .cta-brand-mark { flex-direction: row-reverse; }
+[dir="rtl"] .mm-header { flex-direction: row-reverse; }
 
 /* Font size reduction for Arabic display text (Cairo is wider than Barlow Condensed) */
 [dir="rtl"] .hl-xl { font-size: clamp(64px, 12vw, 155px); }
