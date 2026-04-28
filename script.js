@@ -197,6 +197,8 @@ function detectLang() {
 }
 
 function applyLanguage(lang) {
+  document.documentElement.classList.add('lang-switching');
+
   currentLang = lang;
   const t = TRANSLATIONS[lang];
   const isAr = lang === 'ar';
@@ -248,6 +250,10 @@ function applyLanguage(lang) {
   });
 
   localStorage.setItem('rrLang', lang);
+
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    document.documentElement.classList.remove('lang-switching');
+  }));
 }
 
 /* ── Language button listeners ── */

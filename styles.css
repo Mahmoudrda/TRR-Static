@@ -107,6 +107,14 @@ figure { margin: 0; }
 .container-sm { width: 100%; max-width: var(--wrap-sm); margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
 .section { padding: clamp(80px, 10vw, 136px) 0; }
 
+/* ── Suppress all motion during language switch ── */
+.lang-switching *, .lang-switching *::before, .lang-switching *::after {
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+}
+
 /* ── Scroll reveal ── */
 .scroll-reveal {
   opacity: 0;
