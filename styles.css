@@ -1168,16 +1168,19 @@ figure { margin: 0; }
 
   .svc-row { grid-template-columns: 44px 1fr 44px; gap: 12px; padding: 22px 16px; }
 
-  /* Remove vertical centering so content sits near the top with no dead space above
-     or between the CTA buttons and the follower counter */
-  .hero { justify-content: flex-start; }
+  /* Hero shrinks to content height on mobile — removes the empty space below
+     the followers counter that pushed the partners banner far down */
+  .hero { justify-content: flex-start; min-height: unset; padding-top: 60px; }
   .hero-inner {
     flex: none;
     justify-content: flex-start;
-    padding-top: 24px;
-    padding-bottom: 16px;
+    padding-top: 20px;
+    padding-bottom: 12px;
   }
-  .hero-proof { padding-bottom: 20px; }
+  .hero-proof { padding-bottom: 16px; }
+
+  /* Tighter section spacing on mobile */
+  .section { padding: 52px 0; }
 
   .hero-actions { flex-direction: column; }
   .hero-actions .btn-primary,
